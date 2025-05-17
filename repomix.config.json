@@ -8,9 +8,9 @@
   "ignore": {
     "customPatterns": [
       ".claude/**",
-      ".cursor/**", 
-      ".github/**", 
-      ".repomix/**", 
+      ".cursor/**",
+      ".github/**",
+      ".repomix/**",
       ".gitignore",
       "*.egg-info/**",
       "repomix.config.json"
