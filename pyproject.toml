@@ -1,0 +1,66 @@
+[project]
+name = "python-fastapi-template"
+version = "0.1.0"
+description = "Python FastAPI Template"
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+"fastapi",
+"uvicorn",
+"pydantic",
+"typer",
+"rich",
+"pyyaml",
+"types-PyYAML",
+"pytest",
+"pytest-asyncio",
+"pytest-cov",
+"httpx",
+"python-dotenv",
+"pre-commit",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.venv
+  | build
+  | dist
+  | migrations
+)/
+'''
+
+[tool.ruff]
+line-length = 88
+exclude = [
+".venv",
+"build",
+"dist",
+".egg-info",
+"**/.pyi"
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_ignores = true
+plugins = ["pydantic.mypy"]
+files = ["app"]
+explicit_package_bases = true
+mypy_path = ["app"]
+namespace_packages = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test"]
+python_functions = ["test_*"]
+addopts = "-v --cov=app --cov-report=term-missing"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+]
