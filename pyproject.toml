@@ -5,19 +5,20 @@ description = "Python FastAPI Template"
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 dependencies = [
-"fastapi",
-"uvicorn",
-"pydantic",
-"typer",
-"rich",
-"pyyaml",
-"types-PyYAML",
-"pytest",
-"pytest-asyncio",
-"pytest-cov",
-"httpx",
-"python-dotenv",
-"pre-commit",
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "typer",
+    "rich",
+    "pyyaml",
+    "types-PyYAML",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "httpx",
+    "python-dotenv",
+    "pre-commit",
+    "pydantic-settings>=2.9.1",
 ]
 
 [tool.black]
@@ -50,7 +51,7 @@ warn_unused_ignores = true
 plugins = ["pydantic.mypy"]
 files = ["app"]
 explicit_package_bases = true
-mypy_path = ["app"]
+mypy_path = ["."]
 namespace_packages = true
 
 [tool.pytest.ini_options]

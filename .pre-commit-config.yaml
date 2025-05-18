@@ -27,10 +27,8 @@ repos:
     rev: v1.15.0
     hooks:
       - id: mypy
-        language: python
-        additional_dependencies:
-          - pydantic>=2.6.3
-          - types-PyYAML
+        language: system
+        entry: mypy
         args:
           - --strict
           - --warn-unused-ignores
@@ -42,8 +40,6 @@ repos:
     hooks:
       - id: pytest
         name: pytest
+        language: system         # run inside the same env
         entry: pytest
-        language: python
-        types: [python]
         pass_filenames: false
-        additional_dependencies: [pytest]
