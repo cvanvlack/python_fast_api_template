@@ -37,3 +37,13 @@ repos:
           - --explicit-package-bases
         files: '^.*\.py$'
         exclude: ^tests/
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: python
+        types: [python]
+        pass_filenames: false
+        additional_dependencies: [pytest]
