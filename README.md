@@ -19,7 +19,7 @@ A modern FastAPI project template with type checking, testing, and development t
    uv venv
    source .venv/bin/activate  # On Unix/macOS
    # or
-   .venv\Scripts\activate  # On Windows
+   .\.venv\bin\activate.ps1  # On Windows
    ```
 
 3. **Install dependencies**:
